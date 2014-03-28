@@ -4,14 +4,21 @@
   (:refer-clojure :exclude [get put merge]))
 
 (defprotocol Bucket
+  "A protocol for abstracting basic key value interactions"
   (get [b k])
-  (put [b k v])
+  (put [b k v]))
+
+(defprotocol MergeableBucket
+  "A protocol for abstracting buckets that inherently want some kind of merge operation.
+   riak based buckets are a good example."
   (merge [b v1 v2]))
 
 (defprotocol DeleteableBucket
+  "A protocol for buckets that let you delete objects by key"
   (delete [b k]))
 
 (defprotocol Wipeable
+  "A protocol for buckets that let you empty the contents. Mostly useful for testing"
   (wipe [b]))
 
 (defprotocol ModifiableBucket
@@ -51,6 +58,7 @@
   (put [b k v]
     (swap! bucket-atom #(assoc %1 k v)))
 
+  MergeableBucket
   (merge [b v1 v2]
     (merge-fn v1 v2))
 
