@@ -76,6 +76,6 @@ interact with them. For now, counters only support increment and read.
 
 ## License
 
-Copyright © 2013 Tom Crayford
+Copyright © 2014 Tom Crayford
 
 Distributed under the Eclipse Public License, the same as Clojure.
