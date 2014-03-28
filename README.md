@@ -18,8 +18,9 @@ told. Bucket implementations are often larger than this.
 liza wants you to break up storage in terms of buckets - you should mostly only
 be storing the same kinds of things in each bucket, but you might have many
 buckets from the same storage type. By basing things around buckets, things like
-serialization, caching and eventually consistent merge can be done per kind of
-data you put in storage, and clients don't have to think about them at all.
+serialization, caching, metrics and eventually consistent merge can be done per
+kind of data you put in storage, and clients don't have to think about them at
+all.
 
 - bucket implementations handle serialization themselves
 
