@@ -1,4 +1,4 @@
-(defproject liza "0.1.0-SNAPSHOT"
+(defproject liza "0.1.0"
   :global-vars {*warn-on-reflection* true}
   :description "A key/value store abstraction, based around buckets"
   :url "https://github.com/tcrayford/liza"
